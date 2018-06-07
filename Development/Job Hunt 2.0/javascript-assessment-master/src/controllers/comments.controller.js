@@ -30,7 +30,8 @@ class CommentsController {
     comment.innerHTML = commentObj.commentContent;
     commentsList.appendChild(comment);
 
-    //The .append() & .commentEl()  approach always seems to leave the li tags showing  
+    //The .append() & .commentEl()  approach always seems to leave the li tags showing,
+    //while the code above truly appends the comment to the <ul> meant for comments
     // commentsList.append(commentObj.commentEl());
     
   }
