@@ -26,9 +26,18 @@ class CommentsController {
 
   render(commentObj) {
     let commentsList = document.getElementById(`comments-${commentObj.img.id}`);
-    let comment = document.createElement('li');
-    comment.innerHTML = commentObj.commentContent;
-    commentsList.appendChild(comment);
+    /** The solution i naturally came to */
+    // let comment = document.createElement('li');
+    // comment.innerHTML = commentObj.commentContent;
+    // commentsList.appendChild(comment);
+
+
+    /** ok, the "All of the above will be tested thoroughly, 
+     * so make sure your associations are working properly!" line
+     * really bothered me, so i found another solution to make it work as intended.*/
+    let comment = commentObj.commentEl();
+    commentsList.insertAdjacentHTML( 'beforeend', comment );
+
 
     //The .append() & .commentEl()  approach always seems to leave the li tags showing,
     //while the code above truly appends the comment to the <ul> meant for comments
